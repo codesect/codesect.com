@@ -3,6 +3,7 @@
   --color-brand: #ffc44c;
   --color-link: #106abc;
   --color-text: #332a2a;
+  --narrow-width: 36rem;
   --spacing: 1rem;
   --text-scale-ratio: 1.25;
   --text-sm: calc(1rem / var(--text-scale-ratio));
@@ -352,6 +353,52 @@ img {
   .credits {
     margin: 1rem 0;
   }
+}
+
+/* Main content */
+.post {
+  display: grid;
+  grid-template-columns:
+    minmax(var(--spacing), 1fr)
+    minmax(auto, var(--narrow-width))
+    minmax(var(--spacing), 1fr);
+  padding: 2rem 0;
+}
+
+.post > * {
+  grid-column: 2;
+}
+
+.post .full-width {
+  grid-column: 1 / 4;
+  justify-self: center;
+  max-width: 100%;
+}
+
+.post a {
+  box-shadow: 0 -1px var(--color-brand) inset;
+  color: var(--color-link);
+  padding: 2px 0 1px;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.post a:focus,
+.post a:hover {
+  box-shadow: 0 -1.5rem var(--color-brand) inset;
+  color: #000;
+}
+
+.post ol,
+.post ul {
+  margin: 0 0 0 1.5rem;
+  padding: 0;
+}
+
+.post img,
+.post li,
+.post p {
+  margin: 0 0 1.15rem;
 }
 
 /* coming soon page */
