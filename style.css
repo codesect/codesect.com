@@ -416,3 +416,28 @@ img {
   margin: 0;
   text-align: center;
 }
+
+/* 404 page */
+.page-404 {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.page-404__title {
+  color: #7d7c7a;
+  font-size: 30vw;
+  font-weight: 300;
+  letter-spacing: -2vw;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.page-404__description {
+  background-color: var(--color-bg);
+  box-shadow: 0 -8px 8px -10px rgba(0, 0, 0, 0.3);
+  font-size: 1.5rem;
+  line-height: 1.15;
+  padding: var(--spacing);
+  text-align: center;
+  transform: translateY(-10vw);
+}
