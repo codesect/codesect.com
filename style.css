@@ -442,6 +442,17 @@ img {
   transform: translateY(-10vw);
 }
 
+@media (min-width: 900px) {
+  .page-404__title {
+    font-size: 18rem;
+    letter-spacing: -1.5rem;
+  }
+
+  .page-404__description {
+    transform: translateY(-6rem);
+  }
+}
+
 /* FAQ page */
 .faq__item {
   display: grid;
