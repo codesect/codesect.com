@@ -1,19 +1,21 @@
 {
-    "name": "CodeSect",
-    "short_name": "CodeSect",
-    "icons": [
-        {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#ffc44c",
-    "background_color": "#ffc44c",
-    "display": "standalone"
+  "name": "CodeSect",
+  "short_name": "CodeSect",
+  "background_color": "#f8cf4d",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png?v=20200416",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png?v=20200416",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait",
+  "start_url": "https://codesect.com",
+  "theme_color": "#f8cf4d"
 }

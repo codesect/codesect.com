@@ -1,8 +1,8 @@
 :root {
   --color-bg: #faf9f5;
-  --color-brand: #ffc44c;
+  --color-brand: #f8cf4d;
   --color-link: #106abc;
-  --color-text: #332a2a;
+  --color-text: #3b405b;
   --narrow-width: 36rem;
   --spacing: 1rem;
   --text-scale-ratio: 1.25;
@@ -46,7 +46,7 @@ body {
   display: grid;
   font-family: 'Libre Franklin', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   grid-template-columns: 100%;
   grid-template-rows: auto 1fr auto;
   line-height: 1.65;
@@ -90,6 +90,11 @@ a:focus {
 
 img {
   max-width: 100%;
+}
+
+::selection {
+  background-color: var(--color-brand);
+  color: var(--color-text);
 }
 
 /* Utilities */
@@ -466,7 +471,8 @@ img {
 }
 
 .page-404__title {
-  color: #7d7c7a;
+  /* TODO: lighter indigo, add variable */
+  color: #77798c;
   font-size: 30vw;
   font-weight: 300;
   letter-spacing: -2vw;
