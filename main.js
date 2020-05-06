@@ -1,4 +1,4 @@
-(function() {
+(function () {
   const faq = document.querySelector('.faq');
   const menu = document.querySelector('#menu');
   const toggle = document.querySelector('#toggle-menu');
@@ -15,8 +15,7 @@
 
   toggle.addEventListener('click', handleMenuButtonClick);
 
-  // FAQ toggles
-  function handleFaqButtonClick(e) {
+  function handleFaqClick(e) {
     if (e.target.classList.contains('faq__title')) {
       e.target.nextElementSibling.click();
       return;
@@ -26,32 +25,35 @@
       return;
     }
 
+    const answer = e.target.nextElementSibling;
     const button = e.target;
-    const target = e.target.nextElementSibling;
-    const isExpanded = e.target.getAttribute('aria-expanded') === 'true';
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
     if (isExpanded) {
+      answer.hidden = true;
       button.setAttribute('aria-expanded', 'false');
-      target.hidden = true;
     } else {
+      answer.hidden = false;
       button.setAttribute('aria-expanded', 'true');
-      target.hidden = false;
     }
   }
 
   function handleHashChange() {
     const { hash } = window.location;
-    if (!hash) return;
+    const answer = hash
+      ? document.querySelector(hash)
+      : document.querySelector('.faq__answer');
 
-    const item = document.querySelector(hash);
-    if (!item) return;
+    if (!answer) return;
 
-    item.hidden = false;
-    item.previousElementSibling.setAttribute('aria-expanded', 'true');
+    const button = answer.previousElementSibling;
+
+    answer.hidden = false;
+    button.setAttribute('aria-expanded', 'true');
   }
 
   if (faq) {
-    faq.addEventListener('click', handleFaqButtonClick);
+    faq.addEventListener('click', handleFaqClick);
     window.addEventListener('hashchange', handleHashChange);
     window.addEventListener('load', handleHashChange);
   }
