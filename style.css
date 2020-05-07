@@ -334,15 +334,16 @@ svg {
 /* Footer */
 .site-footer {
   background-color: var(--color-text);
-  color: #fff;
+  color: var(--color-bg);
   display: flex;
-  font-size: 0.875rem;
+  font-size: var(--text-sm);
 }
 
 .footer-menu {
   display: flex;
   flex-direction: column;
   list-style: none;
+  margin: var(--spacing);
   padding: 0;
   text-align: center;
 }
@@ -353,13 +354,15 @@ svg {
 
 .footer-menu__link {
   color: var(--color-brand);
+  display: inline-block;
+  padding: 0.5rem 1rem;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
 .footer-menu__link:hover,
 .footer-menu__link:focus {
-  color: #fff;
+  color: var(--color-bg);
 }
 
 .credits {
@@ -375,14 +378,11 @@ svg {
 
   .footer-menu {
     flex-direction: row;
-  }
-
-  .footer-menu__item {
-    margin: 0 0 0 1rem;
-  }
-
-  .footer-menu__item:first-child {
     margin: 0;
+  }
+
+  .footer-menu__link {
+    padding: 1rem;
   }
 
   .credits {
