@@ -1,10 +1,10 @@
 (function () {
   const faq = document.querySelector('.faq');
   const menu = document.querySelector('#menu');
-  const toggle = document.querySelector('#toggle-menu');
+  const menuToggle = document.querySelector('#toggle-menu');
 
   function handleMenuButtonClick() {
-    if (menu.classList.contains('is-active')) {
+    if (this.getAttribute('aria-expanded') === 'true') {
       this.setAttribute('aria-expanded', 'false');
       menu.classList.remove('is-active');
     } else {
@@ -13,7 +13,9 @@
     }
   }
 
-  toggle.addEventListener('click', handleMenuButtonClick);
+  if (menuToggle) {
+    menuToggle.addEventListener('click', handleMenuButtonClick);
+  }
 
   function handleFaqClick(e) {
     if (e.target.classList.contains('faq__title')) {

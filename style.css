@@ -89,7 +89,34 @@ a:focus {
   outline: thin dotted;
 }
 
-img {
+button,
+input {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+button:focus,
+input:focus {
+  outline: thin dashed;
+  outline-offset: 1px;
+}
+
+button:disabled,
+input:disabled {
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem;
+}
+
+img,
+svg {
   max-width: 100%;
 }
 
@@ -161,8 +188,7 @@ img {
 .navbar {
   align-items: center;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .navbar__link,
@@ -196,9 +222,10 @@ img {
 }
 
 .menu {
-  background-color: #faf9f5; /* body bg colour */
+  background-color: var(--color-bg);
   box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.1);
   display: none;
+  left: 0;
   list-style: none;
   margin: 0;
   padding: var(--spacing);
@@ -233,12 +260,10 @@ img {
 .menu__button {
   background-color: transparent;
   border: 2px solid currentColor;
-  border-radius: 4px;
-  font-size: inherit;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  line-height: 1;
   padding: 0.5rem;
-  position: absolute;
-  right: 1rem;
-  top: 0.3125rem;
 }
 
 .menu__item {
@@ -250,7 +275,7 @@ img {
   color: var(--color-link);
   display: block;
   line-height: 1;
-  padding: 1rem;
+  padding: var(--spacing);
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
