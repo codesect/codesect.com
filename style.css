@@ -3,7 +3,7 @@
   --color-brand: #f8cf4d;
   --color-link: #106abc;
   --color-text: #3b405b;
-  --narrow-width: 38rem;
+  --width-narrow: 38rem;
   --spacing: 1rem;
   --text-scale-ratio: 1.25;
   --text-size: 1.125rem;
@@ -401,7 +401,7 @@ svg {
   display: grid;
   grid-template-columns:
     minmax(var(--spacing), 1fr)
-    minmax(auto, var(--narrow-width))
+    minmax(auto, var(--width-narrow))
     minmax(var(--spacing), 1fr);
   padding: 2rem 0;
 }
@@ -595,4 +595,149 @@ svg {
   font-size: var(--text-lg);
   font-weight: 300;
   line-height: 1.25;
+}
+
+/* invitation and sign in form */
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: var(--width-narrow);
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.form:disabled {
+  opacity: 0.7;
+}
+
+.form--invite {
+  background-color: var(--color-brand);
+  border-radius: 0.125rem;
+}
+
+.form__label {
+  display: block;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.form__input {
+  flex: 1 0;
+  margin-bottom: 1rem;
+  max-width: 100%;
+}
+
+.form__input--invite {
+  display: block;
+  font-family: monospace;
+  font-size: var(--text-lg);
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.form__input[aria-invalid='true'] {
+  /* TODO: add variables */
+  background-color: #feedee;
+  border-color: #f9838b;
+  color: #942f35;
+}
+
+.form__btn {
+  background-color: var(--color-text);
+  border: 0;
+  color: var(--color-bg);
+  padding: 1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.form__btn:focus,
+.form__btn:hover {
+  /* TODO: add variable */
+  background-color: #252637;
+}
+
+.form__btn--invite,
+.form__input--invite {
+  line-height: 1;
+  padding: 1rem;
+}
+
+.form__hint {
+  font-size: var(--text-sm);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .form {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .form__input {
+    margin-bottom: 0;
+  }
+}
+
+.message {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.message--error {
+  /* TODO: add variables */
+  background-color: #feedee;
+  border: 1px solid #f9838b;
+  color: #942f35;
+}
+
+.loading {
+  align-items: center;
+  backdrop-filter: blur(1px);
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+[aria-busy='true'] .loading {
+  display: flex;
+}
+
+.loading svg {
+  fill: none;
+  transform: rotate(-90deg);
+}
+
+.loading circle {
+  animation: loader 2s infinite ease-in-out both;
+  animation-direction: normal;
+  stroke: #fff;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  stroke-linecap: round;
+  stroke-width: 10;
+  transform-origin: center;
+}
+
+@keyframes loader {
+  50% {
+    transform: rotate(360deg);
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    stroke-dashoffset: 283;
+  }
 }

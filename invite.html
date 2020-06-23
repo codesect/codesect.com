@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CodeSect is a collaborative learning platform for developers and designers to effectively improve their programming knowledge and skills."
+    />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-154847338-1"
+    ></script>
+    <script>
+      if (!navigator.doNotTrack) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-154847338-1');
+      }
+    </script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png?v=20200416"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png?v=20200416"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png?v=20200416"
+    />
+    <link rel="manifest" href="/site.webmanifest?v=20200416" />
+    <link
+      rel="mask-icon"
+      href="/safari-pinned-tab.svg?v=20200416"
+      color="#f8cf4d"
+    />
+    <link rel="shortcut icon" href="/favicon.ico?v=20200416" />
+    <meta name="apple-mobile-web-app-title" content="CodeSect" />
+    <meta name="application-name" content="CodeSect" />
+    <meta name="msapplication-TileColor" content="#f8cf4d" />
+    <meta name="theme-color" content="#f8cf4d" />
+    <title>Join CodeSect | Learn, Build, Deploy, Share</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css?v=20200416" />
+  </head>
+
+  <body>
+    <a href="#content" class="skip-to-main">Skip to main content</a>
+    <header class="site-header">
+      <nav class="navbar wrapper" role="navigation">
+        <a class="navbar__link" href="/">
+          <img
+            alt="CodeSect - Home"
+            class="navbar__logo"
+            src="/logo.svg"
+            width="48"
+          />
+        </a>
+        <button class="menu__button" id="toggle-menu" aria-expanded="false">
+          Menu
+        </button>
+        <ul class="menu" id="menu">
+          <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
+          <li class="menu__item">
+            <a class="menu__link" href="/projects">Projects</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="/sign-in">Sign In</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link menu__link--start" href="/invite"
+              >Get Started</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="content" tabindex="-1">
+      <div class="post">
+        <header class="post__header">
+          <div class="post__description">
+            <h1>Apply Now</h1>
+            <p>
+              CodeSect is free to join; however, it is an invitation-only
+              platform at the moment. Please enter your invite code to get
+              started.
+            </p>
+          </div>
+          <img class="post__img-featured" src="/invite.svg" alt="" />
+        </header>
+        <h2>Got an Invite Code?</h2>
+        <form
+          class="form form--invite"
+          id="invitation"
+          autocomplete="off"
+          aria-busy="false"
+        >
+          <label class="form__label" for="code">Your invite code:</label
+          ><input
+            type="text"
+            aria-describedby="hint"
+            aria-invalid="false"
+            class="form__input form__input--invite"
+            id="code"
+            maxlength="8"
+            minlength="8"
+            name="code"
+            pattern="[\w]{8}"
+            placeholder="××××××××"
+            required
+            size="8"
+            title="Your invite code consists of 8 alphanumeric characters."
+          />
+          <button type="submit" class="form__btn form__btn--invite">
+            Validate Code
+          </button>
+          <div
+            class="message message--error"
+            aria-atomic="true"
+            aria-live="assertive"
+            hidden
+            role="alert"
+          ></div>
+          <div class="form__hint" id="hint">
+            The invite code you received consists of 8 alphanumeric characters.
+          </div>
+          <div class="loading" role="status">
+            <svg viewBox="0 0 100 100" width="64">
+              <title>Loading</title>
+              <circle cx="50" cy="50" r="45" />
+            </svg>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="wrapper wrapper--footer">
+        <ul class="footer-menu">
+          <li class="footer-menu__item">
+            <a class="footer-menu__link" href="/faq">FAQ</a>
+          </li>
+          <li class="footer-menu__item">
+            <a class="footer-menu__link" href="/terms">Terms</a>
+          </li>
+          <li class="footer-menu__item">
+            <a class="footer-menu__link" href="/privacy">Privacy Policy</a>
+          </li>
+          <li class="footer-menu__item">
+            <a class="footer-menu__link" href="/code-of-conduct"
+              >Code of Conduct</a
+            >
+          </li>
+        </ul>
+        <p class="credits">© 2020 CodeSect</p>
+      </div>
+    </footer>
+    <script src="/main.js"></script>
+  </body>
+</html>
