@@ -265,11 +265,17 @@ svg {
 
 .menu__button {
   background-color: transparent;
-  border: 2px solid currentColor;
+  border: 1px solid var(--color-text);
   border-radius: 0.25rem;
   cursor: pointer;
   line-height: 1;
-  padding: 0.5rem;
+  padding: 0.75rem;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.menu__button[aria-expanded='true'] {
+  background-color: var(--color-text);
+  color: var(--color-bg);
 }
 
 .menu__item {
@@ -279,11 +285,11 @@ svg {
 
 .menu__link {
   color: var(--color-link);
-  display: block;
+  display: inline-block;
   line-height: 1;
-  padding: var(--spacing);
+  padding: 1rem;
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 .menu__link:focus,
@@ -291,26 +297,16 @@ svg {
   color: var(--color-text);
 }
 
-.menu__link--apply {
-  align-items: center;
-  background-color: #211f1f;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  transition: background-color 0.3s ease-in-out;
+.menu__link--start {
+  border: 1px solid currentColor;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-.menu__link--apply:focus,
-.menu__link--apply:hover {
+.menu__link--start:focus,
+.menu__link--start:hover {
   background-color: var(--color-text);
-  color: #fff;
-}
-
-.menu__link--apply img {
-  color: #fff;
-  height: 1em;
-  margin-right: 0.5rem;
-  width: 1em;
+  color: var(--color-bg);
 }
 
 @media (min-width: 600px) {
@@ -332,8 +328,20 @@ svg {
     opacity: 1;
   }
 
+  .menu__link {
+    font-size: var(--text-sm);
+  }
+
   .menu__button {
     display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .navbar__link,
+  .navbar__logo {
+    height: 4rem;
+    width: 4rem;
   }
 }
 
